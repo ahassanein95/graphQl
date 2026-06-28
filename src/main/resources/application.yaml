@@ -1,0 +1,28 @@
+# application.yml
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  graphql:
+    graphiql:
+      enabled: true
+
+
+#  datasource:
+##   switch when running postgres locally vs in docker
+##    url: jdbc:postgresql://localhost:5432/graphql_demo
+##    url: jdbc:postgresql://host.docker.internal:5432/graphql_demo
+#    url: database-1-instance-1.c5oy6w4me7n9.us-east-2.rds.amazonaws.com
+#    username: amrhassanein
+#    password: "hello"
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true

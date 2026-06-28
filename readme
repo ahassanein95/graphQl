@@ -1,0 +1,98 @@
+#to connect to data base in terminal
+psql postgres
+
+#to see tables
+\dt
+
+#you can run sql commands in psql now
+SELECT * FROM table_name;
+
+
+#create post
+mutation {
+  createPost(
+    title: "Learning GraphQL"
+    content: "This is my first GraphQL post."
+    authorId: 1
+  ) {
+    id
+    title
+    content
+  }
+}
+
+#query posts
+query {
+  posts {
+    id
+    title
+    content
+  }
+}
+
+#query posts with author
+query {
+  posts {
+    id
+    title
+
+    author {
+      id
+      name
+      email
+    }
+  }
+}
+
+##new
+
+##CREATE USER
+mutation CreateUser {
+  createUser(name: "Alice Johnson", email: "alice@example.com") {
+    id
+    name
+    email
+  }
+}
+
+##CREATE POST
+mutation CreatePost {
+  createPost(
+    title: "My New Post"
+    content: "This is the content of my new post"
+    authorId: "1"
+  ) {
+    id
+    title
+    content
+    author {
+      id
+      name
+      email
+    }
+  }
+}
+
+##GET ALL USERS
+query GetUsers {
+  users {
+    id
+    name
+    email
+  }
+}
+
+
+##GET ALL POSTS WITH AUTHOR
+query GetPosts {
+  posts {
+    id
+    title
+    content
+    author {
+      id
+      name
+      email
+    }
+  }
+}
