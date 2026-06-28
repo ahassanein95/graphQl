@@ -31,3 +31,10 @@ jobs:
 
       - name: Build JAR
         run: mvn clean package -DskipTests
+
+      - name: Build Docker image
+        run: |
+          docker build -t graphql-app:latest .
+
+      - name: List Docker images
+        run: docker images
