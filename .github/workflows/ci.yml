@@ -1,4 +1,7 @@
 name: CI Pipeline
+permissions:
+  id-token: write
+  contents: read
 
 on:
   push:
@@ -36,7 +39,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::732603272239:role/Amrs-Github
-          aws-region: us-east-1
+          aws-region: us-east-2
 
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
